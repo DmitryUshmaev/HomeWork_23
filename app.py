@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.route("/perform_query", methods=["POST"])
-def perform_query():
+def perform_query() -> jsonify:
     try:
         params = BatchRequestParams().load(request.json)
     except ValidationError as e:
